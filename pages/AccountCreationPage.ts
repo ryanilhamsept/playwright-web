@@ -16,7 +16,6 @@ export class AccountCreationPage {
     await this.page.locator('#years').selectOption;(faker.number.int({ min: 1980, max: 2015 }).toString());
     await this.page.getByRole('checkbox', { name: 'Sign up for our newsletter!' }).check();
     await this.page.getByRole('checkbox', { name: 'Receive special offers from' }).check();
-
     await this.page.getByRole('textbox', { name: 'First name *' }).fill(faker.person.firstName());
     await this.page.getByRole('textbox', { name: 'Last name *' }).fill(faker.person.firstName());
     await this.page.getByRole('textbox', { name: 'Company', exact: true }).fill(faker.company.name());
