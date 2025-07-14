@@ -15,7 +15,9 @@ test('user can signup', async ({ page }) => {
   });
 
   await signupPage.goto();
+  await page.waitForTimeout(10000);
   await signupPage.startSignup(fakeName, fakeEmail);
+  await page.waitForTimeout(10000);
   await accountCreationPage.fillAccountInformation();
   await accountCreationPage.createAccount();
 });
